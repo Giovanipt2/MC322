@@ -2,7 +2,6 @@
  * Classe respons ́avel por armazenar as informa ̧c ̃oes das pe ̧cas do jogo
  * Seus atributos serão cor e posição
  */
-
 public class Peca {
     private String cor;     //Cor da peça
     private int posicao;    //Posição da peça no tabuleiro

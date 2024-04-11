@@ -1,8 +1,7 @@
 /**
  * Essa classe conterá as informações das cartas de sorte/revés de um jogo Monopoly
- * Seus atributos id, descrição, movimento, efeito, valor, ação, tempo, restrição
+ * Seus atributos id, descrição, movimento, efeito, valor, ação, tempo e restrição
  */
-
 public class CartaSorte{
     private int id;             //Identificador único para cada carta
     private String descricao;   //Nome da carta
@@ -28,10 +27,6 @@ public class CartaSorte{
     //Getters e setters
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getDescricao() {
