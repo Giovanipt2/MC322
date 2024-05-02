@@ -1,5 +1,6 @@
 /**
- *Essa classe modelará como serão os terrenos do jogo
+ * Essa classe modelará como serão os terrenos do jogo
+ * Seus atributos são: número de casas, valor da casa, valor do hotel e se tem hotel no terreno
  * Herda da Super Classe Propriedade
  */
 public class Terreno extends Propriedade {
@@ -9,8 +10,8 @@ public class Terreno extends Propriedade {
     private boolean temHotel;       //Booleano que indica se hpa um hotel no terreno ou não
 
     //Construtor
-    public Terreno(int id, String nome, int preco, Jogador proprietario, double aluguel, int valorCasa, int valorHotel) {
-        super(id, nome, preco, proprietario, aluguel);
+    public Terreno(int id, String descricao, Jogador dono, String nome, int preco, Jogador proprietario, double aluguel, int valorCasa, int valorHotel) {
+        super(id, descricao, dono, nome, preco, proprietario, aluguel);
         this.numCasas = 0;      //O número de casas nos terrenos começa sendo 0
         this.valorCasa = valorCasa;
         this.valorHotel = valorHotel;
@@ -57,9 +58,9 @@ public class Terreno extends Propriedade {
      * @return True, se a compra pôde ser feita; ou false, caso contrário
      */
     public boolean comprarCasa() {
-        if (this.getProprietario().temDinheiro(valorCasa) && numCasas < 4){
+        if (this.getDono().temDinheiro(valorCasa) && numCasas < 4){
             numCasas++;
-            this.getProprietario().setDinheiro(this.getProprietario().getDinheiro() - valorCasa);
+            this.getDono().setDinheiro(this.getDono().getDinheiro() - valorCasa);
             return true;
         }
 
@@ -72,12 +73,34 @@ public class Terreno extends Propriedade {
      * @return True, se a compra pôde ser feita; ou false, caso contrário
      */
     public boolean comprarHotel() {
-        if (this.getProprietario().temDinheiro(valorHotel) && numCasas == 4 && temHotel == false){
+        if (this.getDono().temDinheiro(valorHotel) && numCasas == 4 && temHotel == false){
             temHotel = true;
-            this.getProprietario().setDinheiro(this.getProprietario().getDinheiro() - valorHotel);
+            this.getDono().setDinheiro(this.getDono().getDinheiro() - valorHotel);
             return true;
         }
 
         return false;
+    }
+
+
+    /**
+     * Método que define como as informações de um terreno serão exibidas
+     */
+    @Override       //Indicador de que este método sobrescreve o método "toString" que já existe na superclasse
+    public String toString() {
+        String out = "";
+        out += super.toString();
+        out += "Número de casas: " + numCasas + "\n";
+        out += "Valor para construir uma casa: " + valorCasa + "\n";
+        out += "Valor para construir um hotel: " + valorHotel + "\n";
+        
+        if (temHotel) 
+            out += "Há um hotel neste terreno";
+
+        else
+            out += "Não há um hotel neste terreno";
+        
+
+        return out;
     }
 }

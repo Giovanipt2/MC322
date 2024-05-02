@@ -1,108 +1,244 @@
 import java.util.Scanner;
 
 public class Main {
+    /**
+     * Método que servirá como um menu que mostra as informações e realiza as ações pedidass
+     */
+    public static void menu(Tabuleiro tabuleiro) {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            //Opções que serão dadas para se escolher no menu
+            System.out.println("Digite o número da opção que gostaria de visualizar:");
+            System.out.println("1 - Informações de jogador");
+            System.out.println("2 - Jogadores da partida");
+            System.out.println("3 - Adicionar novo jogador");
+            System.out.println("4 - Informações de propriedade");
+            System.out.println("5 - Fechar menu");
+
+            String comando = scanner.nextLine();
+            
+            switch (comando) {
+                case "1":
+                    System.out.println("Digite o ID do jogador buscado:");
+                    String resposta = scanner.nextLine();
+
+                    Jogador jogadorBuscado = tabuleiro.buscarJogador(Integer.parseInt(resposta));
+
+                    if (jogadorBuscado == null)
+                        System.out.println("O jogador em questão não está na partida");
+
+                    else {
+                        System.out.println("Digite qual das seguintes informações do jogador você gostaria de ver:");
+                        System.out.println("1 - Nome");
+                        System.out.println("2 - CPF");
+                        System.out.println("3 - Email");
+                        System.out.println("4 - Foto");
+                        System.out.println("5 - Dinheiro atual");
+                        System.out.println("6 - Peça");
+                        System.out.println("7 - Cartas");
+                        System.out.println("8 - Todas as informações");
+
+                        resposta = scanner.nextLine();
+
+                        switch (resposta) {
+                            case "1":
+                                System.out.println(jogadorBuscado.getNome());
+                                break;
+                        
+                            case "2":
+                                System.out.println(jogadorBuscado.getCpf());
+                                break;
+
+                            case "3":
+                                System.out.println(jogadorBuscado.getEmail());
+                                break;
+
+                            case "4":
+                                System.out.println(jogadorBuscado.getFoto());
+                                break;
+
+                            case "5":
+                                System.out.println(jogadorBuscado.getDinheiro());
+                                break;
+
+                            case "6":
+                                System.out.println(jogadorBuscado.getPeca());
+                                break;
+
+                            case "7":
+                                System.out.println(jogadorBuscado.getCartas());
+                                break;
+
+                            case "8":
+                                System.out.println(jogadorBuscado);
+                                break;
+                        }
+                    }
+                    break;
+            
+                case "2":
+                    if (tabuleiro.getJogadores().size() > 0)
+                        for (Jogador jogador : tabuleiro.getJogadores())
+                            System.out.println(jogador.getNome() + " (" + jogador.getId() + ")");
+
+                    else
+                        System.out.println("Não há jogadores na partida");
+                    
+                    break;
+
+                case "3":
+                    String nomeLido, cpfLido, emailLido, fotoLida, corPecaLida;
+                    System.out.println("Digite as informações do novo jogador:");
+
+                    System.out.println("Nome:");
+                    nomeLido = scanner.nextLine();
+
+                    System.out.println("CPF:");
+                    cpfLido = scanner.nextLine();
+
+                    while (!Utils.validarCpf(cpfLido)) {
+                        System.out.println("O CPF inserido é inválido. Por favor, insira-o novamente");
+                        cpfLido = scanner.nextLine();
+                    }
+
+                    System.out.println("Email:");
+                    emailLido = scanner.nextLine();
+
+                    while (!Utils.validarEmail(emailLido)){
+                        System.out.println("O email inserido é inválido. Por favor, insira-o novamente");
+                        emailLido = scanner.nextLine();
+                    }
+
+                    System.out.println("Caminho para a foto:");
+                    fotoLida = scanner.nextLine();
+
+                    System.out.println("Cor da peça do jogador:");
+                    corPecaLida = scanner.nextLine();
+
+                    Jogador jogadorNovo = new Jogador(nomeLido, cpfLido, emailLido, fotoLida, new Peca(corPecaLida, 0));
+                    tabuleiro.adicionarJogador(jogadorNovo);
+                    System.out.println("O jogador criado tem as seguintes características:");
+                    System.out.println(jogadorNovo);
+
+                    break;
+
+                case "4":
+                    System.out.println("Digite o ID da propriedade buscada:");
+                    resposta = scanner.nextLine();
+
+                    Propriedade propriedadeBuscada = tabuleiro.buscarPropriedade(Integer.parseInt(resposta));
+
+                    if (propriedadeBuscada == null)
+                        System.out.println("A propriedade em questão não está no tabuleiro");
+
+                    else {
+                        System.out.println("Digite qual das seguintes informações do jogador você gostaria de ver:");
+                        System.out.println("1 - Nome");
+                        System.out.println("2 - Preço");
+                        System.out.println("3 - Aluguel");
+                        System.out.println("4 - Descrição");
+                        System.out.println("5 - Dono");
+                        System.out.println("6 - Todas as informações");
+
+                        resposta = scanner.nextLine();
+
+                        switch (resposta) {
+                            case "1":
+                                System.out.println(propriedadeBuscada.getNome());
+                                break;
+                        
+                            case "2":
+                                System.out.println(propriedadeBuscada.getPreco());
+                                break;
+
+                            case "3":
+                                System.out.println(propriedadeBuscada.getAluguel());
+                                break;
+
+                            case "4":
+                                System.out.println(propriedadeBuscada.getDescricao());
+                                break;
+
+                            case "5":
+                                if (propriedadeBuscada.getDono() != null)
+                                    System.out.println(propriedadeBuscada.getDono());
+
+                                else
+                                    System.out.println("Essa propriedade não pertence a nenhum jogador");
+
+                                break;
+
+                            case "6":
+                                System.out.println(propriedadeBuscada);
+                                break;
+                        }
+                    }
+
+                    break;
+
+                case "5":
+                    System.out.println("Espero ter ajudado!");
+                    scanner.close();
+                    return;
+            }
+        }
+    }
+
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
 
         //Parte de testes dos construtores e instanciação de alguns objetos das classes
-        Jogador jogador1 = new Jogador("Giovani", "526413728", "p200246@dac.unicamp.br" , "Minha foto");
-        System.out.println(jogador1);
-        System.out.println("");
-
-        CartaSorte carta1 = new CartaSorte(1, "Avanço", "Avançe 3 casas", "Positivo",
-         0, null, 0, "Essa carta só pode ser usada após alguma compra");
-        System.out.println("ID da carta: " + carta1.getId());
-        System.out.println("Descrição: " + carta1.getDescricao());
-        System.out.println("Movimento: " + carta1.getMovimento());
-        System.out.println("Efeito: " + carta1.getEfeito());
-        System.out.println("Restrição: " + carta1.getRestricao());
-        System.out.println("");
-        
         Peca peca1 = new Peca("ciano", 3);
-        System.out.println("A peça é da cor " + peca1.getCor() + " e está na posição " + peca1.getPosicao());
-        System.out.println("");
+        Jogador jogador1 = new Jogador("Giovani", "526413728", "p200246@dac.unicamp.br" , "Minha foto", peca1);
+        CartaSorte carta1 = new CartaSorte(1, "Avanço", jogador1, "Avançe 3 casas", "Positivo",
+         0, null, 0, "Essa carta só pode ser usada após alguma compra");
+        Propriedade propriedade1 = new Propriedade(1, "tutstuts", jogador1, "Propriedade 1", 400, jogador1, 50.0);
+        ServicoPublico servicoPublico1 = new ServicoPublico(2, "tutstuts", jogador1,"Serviço Público 1", 200, jogador1, 30.0);
+        Estacao estacao1 = new Estacao(0, "tutstuts", jogador1,"Estação 1", 300, jogador1, 40.0);
+        Terreno terreno1 = new Terreno(1, "tutstuts", jogador1,"Propriedade 1", 400, jogador1, 50.0, 100, 200);
+        Tabuleiro tabuleiro = new Tabuleiro();
 
-        //Parte que representaria a coleta dos dados de um jogador e sua criação
-        System.out.println("Digite o seu nome: ");
-        String nomeLido = scanner.nextLine();
+        System.out.println(carta1);
+        System.out.println(propriedade1);
+        System.out.println(terreno1);
+        System.out.println(servicoPublico1);
+        System.out.println(estacao1);
+        System.out.println(tabuleiro);
+        System.out.println(peca1);
 
-        System.out.println("Digite o seu CPF: ");
-        String cpfLido = scanner.nextLine();
+        //Testes das funcionalidades do tabuleiro
+        tabuleiro.adicionarJogador(jogador1);
+        tabuleiro.adicionarPropriedade(terreno1);
+        
+        //Parte de testes da compra e venda de casas e hotéis para o jogador
+        if (terreno1.comprarCasa())
+            System.out.println("O jogador " + terreno1.getDono().getNome() + " comprou uma casa no(a) " + terreno1.getNome());
+        
+        else
+            System.out.println("O jogador " + terreno1.getDono().getNome() + " não conseguiu comprar uma casa no(a) " + terreno1.getNome());
 
-        System.out.println("Digite o seu email: ");
-        String emailLido = scanner.nextLine();
+        if (terreno1.comprarHotel())
+            System.out.println("O jogador " + terreno1.getDono().getNome() + " comprou um hotel no(a) " + terreno1.getNome());
 
-        System.out.println("Digite o caminho para sua foto: ");
-        String fotoLida = scanner.nextLine();
+        else
+            System.out.println("O jogador " + terreno1.getDono().getNome() + " naõ conseguiu comprar um hotel no(a) " + terreno1.getNome());
+        
+        //Testes das novas funcionalidades que relacionam as cartas aos jogadores
+        jogador1.adicionaCarta(carta1);
+        System.out.println(jogador1);
 
-        Jogador jogador2 = new Jogador(nomeLido, cpfLido, emailLido, fotoLida);
+        jogador1.removeCarta(carta1);
+        System.out.println(jogador1);
 
-        System.out.println(jogador2);
-        System.out.println("");
+        //Testes relacionados ao uso do menu
+        System.out.println("Gostaria de visualizar o menu? Digite 1 em caso afirmativo, ou 0, caso não queira");
+        String resposta = scanner.nextLine();
+
+        if (resposta.equals("1"))
+            menu(tabuleiro);
 
         scanner.close();        //Fecha o objeto Scanner para liberar os recursos
 
-        //Parte que testa as funções de validar cpf e validar email
-        System.out.println(Utils.validarCpf("63728346712"));
-        System.out.println(Utils.validarEmail("giovani@gmail.com"));
-        System.out.println("");
-
-        //Parte de testes das propriedades
-        Propriedade propriedade1 = new Propriedade(1, "Propriedade 1", 400, jogador1, 50.0);
-        System.out.println("ID da propriedade: " + propriedade1.getId());
-        System.out.println("Nome da propriedade: " + propriedade1.getNome());
-        System.out.println("Preço: " + propriedade1.getPreco());
-        System.out.println("Proprietário: " + propriedade1.getProprietario());
-        System.out.println("Aluguel: " + propriedade1.getAluguel());
-        System.out.println("");
-
-        //Parte de testes dos serviços públicos
-        ServicoPublico servicoPublico1 = new ServicoPublico(2, "Serviço Público 1", 200, jogador1, 30.0);
-        System.out.println("ID do serviço: " + servicoPublico1.getId());
-        System.out.println("Nome do serviço: " + servicoPublico1.getNome());
-        System.out.println("Preço: " + servicoPublico1.getPreco());
-        System.out.println("Proprietário: " + servicoPublico1.getProprietario());
-        System.out.println("Aluguel: " + servicoPublico1.getAluguel());
-        System.out.println("");
-
-        //Parte de testes das estações
-        Estacao estacao1 = new Estacao(0, "Estação 1", 300, jogador1, 40.0);
-        System.out.println("ID da estação: " + estacao1.getId());
-        System.out.println("Nome da estação: " + estacao1.getNome());
-        System.out.println("Preço: " + estacao1.getPreco());
-        System.out.println("Proprietário: " + estacao1.getProprietario());
-        System.out.println("Aluguel: " + estacao1.getAluguel());
-        System.out.println("");
-
-        //Parte de testes dos terrenos
-        Terreno terreno1 = new Terreno(1, "Propriedade 1", 400, jogador1, 50.0, 100, 200);
-        System.out.println("ID do terreno: " + terreno1.getId());
-        System.out.println("Nome do terreno: " + terreno1.getNome());
-        System.out.println("Preço: " + terreno1.getPreco());
-        System.out.println("Proprietário: " + terreno1.getProprietario());
-        System.out.println("Aluguel: " + terreno1.getAluguel());
-        System.out.println("Valor da casa: " + terreno1.getValorCasa());
-        System.out.println("Valor do hotel: " + terreno1.getValorHotel());
-        System.out.println("");
-
-        //Parte de testes do tabuleiro
-        Tabuleiro tabuleiro = new Tabuleiro();
-        tabuleiro.adicionarJogador(jogador1);
-        tabuleiro.adicionarPropriedade(terreno1);
-        System.out.println("O jogador " + jogador1.getNome() + " está no tabuleiro");
-        System.out.println("O terreno: " + terreno1.getNome() + " está no tabuleiro");
-
-        //Parte de testes da compra e venda de casas e hotéis para o jogador
-        if (terreno1.comprarCasa())
-            System.out.println("O jogador " + terreno1.getProprietario().getNome() + " comprou uma casa no(a) " + terreno1.getNome());
-        
-        else
-            System.out.println("O jogador " + terreno1.getProprietario().getNome() + " não conseguiu comprar uma casa no(a) " + terreno1.getNome());
-
-        if (terreno1.comprarHotel())
-            System.out.println("O jogador " + terreno1.getProprietario().getNome() + " comprou um hotel no(a) " + terreno1.getNome());
-
-        else
-            System.out.println("O jogador " + terreno1.getProprietario().getNome() + " naõ conseguiu comprar um hotel no(a) " + terreno1.getNome());
     }
 }

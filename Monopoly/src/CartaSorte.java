@@ -1,10 +1,9 @@
 /**
  * Essa classe conterá as informações das cartas de sorte/revés de um jogo Monopoly
  * Seus atributos id, descrição, movimento, efeito, valor, ação, tempo e restrição
+ * Herda da superclasse Carta
  */
-public class CartaSorte{
-    private int id;             //Identificador único para cada carta
-    private String descricao;   //Nome da carta
+public class CartaSorte extends Carta{
     private String movimento;   //Para as que dão alguma instrução de movimentação
     private String efeito;      //Atributo que diz se o efeito é positivo, negativo ou neutro
     private int valor;          //Para cartas que envolvem dinheiro
@@ -13,9 +12,8 @@ public class CartaSorte{
     private String restricao;   //Para cartas que possuem restrições de uso
 
     //Construtor
-    public CartaSorte(int id, String descricao, String movimento, String efeito, int valor, String acao, int tempo, String restricao) {
-        this.id = id;
-        this.descricao = descricao;
+    public CartaSorte(int id, String descricao, Jogador dono, String movimento, String efeito, int valor, String acao, int tempo, String restricao) {
+        super(id, descricao, dono);
         this.movimento = movimento;
         this.efeito = efeito;
         this.valor = valor;
@@ -25,18 +23,6 @@ public class CartaSorte{
     }
 
     //Getters e setters
-    public int getId() {
-        return id;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
     public String getMovimento() {
         return movimento;
     }
@@ -86,5 +72,20 @@ public class CartaSorte{
     }
 
 
+    /**
+     * Método que define como as informações de uma carta de sorte/revés serão exibidas
+     */
+    @Override       //Indicador de que este método sobrescreve o método "toString" que já existe na superclasse
+    public String toString() {
+        String out = "";
+        out += super.toString();
+        out += "Movimento: " + movimento + "\n";
+        out += "Efeito: " + efeito + "\n";
+        out += "Valor: " + valor + "\n";
+        out += "Ação: " + acao + "\n";
+        out += "Tempo: " + tempo + "\n";
+        out += "Restrição: " + restricao + "\n";
 
+        return out;
+    }
 }

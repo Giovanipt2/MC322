@@ -29,7 +29,16 @@ public class Peca {
         this.posicao = posicao;
     }
 
-
+    /**
+     * Método que define como as informações da peça serão exibidas
+     */
+    @Override       //Indicador de que este método sobrescreve o método "toString" que já existe na superclasse
+    public String toString() {
+        String out = "";
+        out += "A peça é da cor " + cor + " e está na posção " + posicao + "\n";
+ 
+        return out;
+    }
 
     
 }

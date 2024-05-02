@@ -5,8 +5,8 @@
 public class ServicoPublico extends Propriedade {
 
     //Construtor
-    public ServicoPublico(int id, String nome, int preco, Jogador proprietario, double aluguel) {
-        super(id, nome, preco, proprietario, aluguel);
+    public ServicoPublico(int id, String descricao, Jogador dono, String nome, int preco, Jogador proprietario, double aluguel) {
+        super(id, descricao, dono, nome, preco, proprietario, aluguel);
     }
 
     /**
