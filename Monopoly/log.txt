@@ -1,0 +1,514 @@
+Jogador rolou o dado e tirou: 2
+Alice comprou o serviço público CPFL por R$500
+Jogador rolou o dado e tirou: 2
+Jogador rolou o dado e tirou: 4
+Alice comprou o terreno Faria Lima por R$400
+Jogador rolou o dado e tirou: 5
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Bob teve azar, e acabou de perder R$100!
+Jogador rolou o dado e tirou: 2
+Carol comprou o serviço público CPFL por R$500
+Jogador rolou o dado e tirou: 5
+Carta sorteada: Parabéns, você ganhou R$200!
+O jogador David teve sorte, e acabou de ganhar R$200!
+Jogador rolou o dado e tirou: 1
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Alice teve azar, e acabou de perder R$100!
+Jogador rolou o dado e tirou: 5
+Jogador rolou o dado e tirou: 5
+Carol comprou o serviço público DAE por R$300
+Jogador rolou o dado e tirou: 4
+Carta sorteada: Ops, você perdeu R$100!
+O jogador David teve azar, e acabou de perder R$100!
+Jogador rolou o dado e tirou: 3
+Alice comprou a estação Estação da Luz por R$150
+Jogador rolou o dado e tirou: 5
+Bob comprou a estação Consolação por R$400
+Jogador rolou o dado e tirou: 4
+Carol comprou o terreno Jardins por R$550
+Jogador rolou o dado e tirou: 6
+O jogador David pagou R$80 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 2
+Alice comprou o terreno Av. Brasil por R$350
+Jogador rolou o dado e tirou: 4
+Bob comprou o serviço público CIA Lixos por R$250
+Jogador rolou o dado e tirou: 2
+Carol comprou o serviço público CPTM por R$400
+Jogador rolou o dado e tirou: 1
+David comprou o terreno Av. Rebouças por R$300
+Jogador rolou o dado e tirou: 1
+O jogador Alice pagou R$110 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 1
+Bob passou pela posição inicial e ganhou 200!
+Bob passou pela posição inicial e ganhou 200!
+Jogador rolou o dado e tirou: 2
+Alice comprou o serviço público CPFL por R$500
+Jogador rolou o dado e tirou: 5
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Bob teve azar, e acabou de perder R$100!
+Jogador rolou o dado e tirou: 6
+Carol comprou a estação Sé por R$300
+Jogador rolou o dado e tirou: 4
+David comprou o terreno Faria Lima por R$400
+Jogador rolou o dado e tirou: 1
+Alice comprou o terreno Saudade por R$300
+Jogador rolou o dado e tirou: 1
+O jogador Bob pagou R$60 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 3
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Carol teve azar, e acabou de perder R$300!
+Jogador rolou o dado e tirou: 5
+Carta sorteada: Ops, você perdeu R$100!
+O jogador David teve azar, e acabou de perder R$100!
+Jogador rolou o dado e tirou: 5
+Alice comprou a estação Estação da Luz por R$150
+Jogador rolou o dado e tirou: 4
+Bob comprou o terreno Av. Brasil por R$350
+Jogador rolou o dado e tirou: 5
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Carol teve azar, e acabou de perder R$200!
+Jogador rolou o dado e tirou: 5
+Carta sorteada: Parabéns, você ganhou R$100!
+O jogador David teve sorte, e acabou de ganhar R$100!
+Jogador rolou o dado e tirou: 1
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Alice teve azar, e acabou de perder R$100!
+Jogador rolou o dado e tirou: 3
+Bob comprou o serviço público CPTM por R$400
+Jogador rolou o dado e tirou: 3
+Carol comprou o terreno Parque Fortaleza por R$250
+Jogador rolou o dado e tirou: 4
+David comprou o terreno Fazenda da Paz por R$200
+Jogador rolou o dado e tirou: 1
+O jogador Alice pagou R$70 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 2
+Bob comprou a estação Consolação por R$400
+Jogador rolou o dado e tirou: 6
+Carol passou pela posição inicial e ganhou 200!
+O jogador Carol pagou R$60 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 5
+David passou pela posição inicial e ganhou 200!
+O jogador David pagou R$60 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 4
+Carta sorteada: Parabéns, você ganhou R$200!
+O jogador Alice teve sorte, e acabou de ganhar R$200!
+Jogador rolou o dado e tirou: 1
+Bob comprou o terreno Av. Rebouças por R$300
+Jogador rolou o dado e tirou: 5
+O jogador Carol pagou R$30 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 3
+O jogador David pagou R$60 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 5
+Alice comprou o serviço público CIA Lixos por R$250
+Jogador rolou o dado e tirou: 5
+Bob passou pela posição inicial e ganhou 200!
+Bob comprou a estação Copacabana por R$200
+Jogador rolou o dado e tirou: 3
+Carol comprou o terreno Jardins por R$550
+Jogador rolou o dado e tirou: 4
+O jogador David pagou R$70 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 6
+Alice passou pela posição inicial e ganhou 200!
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Alice teve azar, e acabou de perder R$200!
+Jogador rolou o dado e tirou: 4
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Bob teve azar, e acabou de perder R$200!
+Jogador rolou o dado e tirou: 4
+O jogador Carol pagou R$80 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 4
+Carta sorteada: Ops, você perdeu R$100!
+O jogador David teve azar, e acabou de perder R$300!
+Jogador rolou o dado e tirou: 3
+Jogador rolou o dado e tirou: 5
+Bob comprou uma casa no terreno Av. Brasil por R$35
+Jogador rolou o dado e tirou: 5
+Carol passou pela posição inicial e ganhou 200!
+Jogador rolou o dado e tirou: 4
+David comprou uma casa no terreno Fazenda da Paz por R$20
+Jogador rolou o dado e tirou: 5
+O jogador Alice pagou R$500 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 4
+Carta sorteada: Parabéns, você ganhou R$200!
+O jogador Bob teve sorte, e acabou de ganhar R$200!
+Jogador rolou o dado e tirou: 5
+Carta sorteada: Parabéns, você ganhou R$200!
+O jogador Carol teve sorte, e acabou de ganhar R$200!
+Jogador rolou o dado e tirou: 2
+David passou pela posição inicial e ganhou 200!
+Jogador rolou o dado e tirou: 1
+Carta sorteada: Parabéns, você ganhou R$100!
+O jogador Alice teve sorte, e acabou de ganhar R$100!
+Jogador rolou o dado e tirou: 4
+O jogador Bob pagou R$50 de aluguel ao jogador David
+Jogador rolou o dado e tirou: 2
+Carol comprou o serviço público DAE por R$300
+Jogador rolou o dado e tirou: 1
+O jogador David pagou R$40 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 6
+Alice passou pela posição inicial e ganhou 200!
+Jogador rolou o dado e tirou: 2
+Bob passou pela posição inicial e ganhou 200!
+Jogador rolou o dado e tirou: 2
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Carol teve azar, e acabou de perder R$100!
+Jogador rolou o dado e tirou: 5
+O jogador David pagou R$60 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 4
+O jogador Alice pagou R$80 de aluguel ao jogador David
+Jogador rolou o dado e tirou: 1
+Jogador rolou o dado e tirou: 1
+O jogador Carol pagou R$87 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 5
+O jogador David pagou R$110 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 4
+Jogador rolou o dado e tirou: 3
+O jogador Bob pagou R$80 de aluguel ao jogador David
+Jogador rolou o dado e tirou: 2
+Carol comprou o terreno Morumbi por R$380
+Jogador rolou o dado e tirou: 4
+O jogador David pagou R$80 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 2
+O jogador Alice pagou R$87 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 2
+O jogador Bob pagou R$60 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 4
+O jogador Carol pagou R$60 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 1
+O jogador David pagou R$60 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 4
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Alice teve azar, e acabou de perder R$300!
+Jogador rolou o dado e tirou: 3
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Bob teve azar, e acabou de perder R$200!
+Jogador rolou o dado e tirou: 6
+Carol passou pela posição inicial e ganhou 200!
+O jogador Carol pagou R$900 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 2
+David comprou uma casa no terreno Fazenda da Paz por R$20
+Jogador rolou o dado e tirou: 3
+O jogador Alice pagou R$50 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 6
+Jogador rolou o dado e tirou: 3
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Carol teve azar, e acabou de perder R$200!
+Jogador rolou o dado e tirou: 2
+David passou pela posição inicial e ganhou 200!
+Jogador rolou o dado e tirou: 1
+O jogador Alice pagou R$60 de aluguel ao jogador David
+Jogador rolou o dado e tirou: 2
+O jogador Bob pagou R$50 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 6
+Carol comprou uma casa no terreno Jardins por R$55
+Jogador rolou o dado e tirou: 5
+Carta sorteada: Ops, você perdeu R$100!
+O jogador David teve azar, e acabou de perder R$200!
+Jogador rolou o dado e tirou: 3
+Alice passou pela posição inicial e ganhou 200!
+O jogador Alice pagou R$40 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 4
+Bob passou pela posição inicial e ganhou 200!
+Jogador rolou o dado e tirou: 1
+Carol comprou uma casa no terreno Morumbi por R$38
+Jogador rolou o dado e tirou: 2
+O jogador David pagou R$120 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 3
+O jogador Alice pagou R$80 de aluguel ao jogador David
+Jogador rolou o dado e tirou: 1
+O jogador Bob pagou R$150 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 5
+Carol comprou uma casa no terreno Parque Fortaleza por R$25
+Jogador rolou o dado e tirou: 1
+O jogador David pagou R$30 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 1
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Alice teve azar, e acabou de perder R$200!
+Jogador rolou o dado e tirou: 1
+O jogador Bob pagou R$60 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 2
+O jogador Carol pagou R$100 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 6
+Carta sorteada: Parabéns, você ganhou R$100!
+O jogador David teve sorte, e acabou de ganhar R$100!
+Jogador rolou o dado e tirou: 1
+O jogador Alice pagou R$60 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 5
+O jogador Bob pagou R$30 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 5
+Carol passou pela posição inicial e ganhou 200!
+O jogador Carol pagou R$80 de aluguel ao jogador David
+Jogador rolou o dado e tirou: 4
+David comprou uma casa no terreno Fazenda da Paz por R$20
+Jogador rolou o dado e tirou: 6
+O jogador Alice pagou R$95 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 4
+O jogador Bob pagou R$95 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 5
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Carol teve azar, e acabou de perder R$100!
+Jogador rolou o dado e tirou: 1
+O jogador David pagou R$50 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 5
+O jogador Alice pagou R$62 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 5
+O jogador Bob pagou R$62 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 6
+O jogador Carol pagou R$80 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 2
+David passou pela posição inicial e ganhou 200!
+O jogador David pagou R$40 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 1
+O jogador Alice pagou R$70 de aluguel ao jogador David
+Jogador rolou o dado e tirou: 3
+Bob passou pela posição inicial e ganhou 200!
+Jogador rolou o dado e tirou: 1
+O jogador Carol pagou R$60 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 3
+David comprou uma casa no terreno Faria Lima por R$40
+Jogador rolou o dado e tirou: 2
+Alice passou pela posição inicial e ganhou 200!
+Jogador rolou o dado e tirou: 2
+O jogador Bob pagou R$300 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 6
+Carol passou pela posição inicial e ganhou 200!
+O jogador Carol pagou R$900 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 6
+O jogador David pagou R$87 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 4
+O jogador Alice pagou R$100 de aluguel ao jogador David
+Jogador rolou o dado e tirou: 6
+O jogador Bob pagou R$30 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 3
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Carol teve azar, e acabou de perder R$100!
+Jogador rolou o dado e tirou: 3
+O jogador David pagou R$300 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 5
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Alice teve azar, e acabou de perder R$200!
+Jogador rolou o dado e tirou: 6
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Bob teve azar, e acabou de perder R$200!
+Jogador rolou o dado e tirou: 2
+Jogador rolou o dado e tirou: 3
+O jogador David pagou R$60 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 3
+O jogador Alice pagou R$95 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 3
+O jogador Bob pagou R$62 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 5
+Carol comprou uma casa no terreno Morumbi por R$38
+Jogador rolou o dado e tirou: 1
+O jogador David pagou R$62 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 6
+O jogador Alice pagou R$70 de aluguel ao jogador David
+Jogador rolou o dado e tirou: 6
+Bob passou pela posição inicial e ganhou 200!
+O jogador Bob pagou R$60 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 2
+Carta sorteada: Parabéns, você ganhou R$100!
+O jogador Carol teve sorte, e acabou de ganhar R$100!
+Jogador rolou o dado e tirou: 5
+David passou pela posição inicial e ganhou 200!
+O jogador David pagou R$750 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 2
+Alice passou pela posição inicial e ganhou 200!
+Jogador rolou o dado e tirou: 3
+O jogador Bob pagou R$60 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 3
+Carol comprou uma casa no terreno Parque Fortaleza por R$25
+Jogador rolou o dado e tirou: 6
+O jogador David pagou R$30 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 2
+Jogador rolou o dado e tirou: 4
+Bob comprou uma casa no terreno Av. Brasil por R$35
+Jogador rolou o dado e tirou: 5
+Carol passou pela posição inicial e ganhou 200!
+O jogador Carol pagou R$750 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 2
+O jogador David pagou R$104 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 6
+Jogador rolou o dado e tirou: 3
+Jogador rolou o dado e tirou: 2
+O jogador Carol pagou R$100 de aluguel ao jogador David
+Jogador rolou o dado e tirou: 4
+Carta sorteada: Ops, você perdeu R$100!
+O jogador David teve azar, e acabou de perder R$100!
+Jogador rolou o dado e tirou: 6
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Alice teve azar, e acabou de perder R$200!
+Jogador rolou o dado e tirou: 6
+O jogador Bob pagou R$300 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 4
+O jogador Carol pagou R$30 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 5
+O jogador David pagou R$250 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 6
+Alice passou pela posição inicial e ganhou 200!
+Jogador rolou o dado e tirou: 4
+Bob passou pela posição inicial e ganhou 200!
+O jogador Bob pagou R$60 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 1
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Carol teve azar, e acabou de perder R$300!
+Jogador rolou o dado e tirou: 3
+David passou pela posição inicial e ganhou 200!
+O jogador David pagou R$450 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 5
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Alice teve azar, e acabou de perder R$200!
+Jogador rolou o dado e tirou: 3
+O jogador Bob pagou R$60 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 3
+Carol comprou uma casa no terreno Morumbi por R$38
+Jogador rolou o dado e tirou: 3
+Carta sorteada: Ops, você perdeu R$100!
+O jogador David teve azar, e acabou de perder R$100!
+Jogador rolou o dado e tirou: 4
+Carta sorteada: Parabéns, você ganhou R$300!
+O jogador Alice teve sorte, e acabou de ganhar R$300!
+Jogador rolou o dado e tirou: 1
+O jogador Bob pagou R$60 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 1
+O jogador Carol pagou R$100 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 5
+O jogador David pagou R$104 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 5
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Alice teve azar, e acabou de perder R$100!
+Jogador rolou o dado e tirou: 4
+O jogador Bob pagou R$137 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 5
+O jogador Carol pagou R$70 de aluguel ao jogador David
+Jogador rolou o dado e tirou: 1
+O jogador David pagou R$137 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 5
+Jogador rolou o dado e tirou: 5
+Bob comprou uma casa no terreno Av. Rebouças por R$30
+Jogador rolou o dado e tirou: 4
+Carol passou pela posição inicial e ganhou 200!
+O jogador Carol pagou R$600 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 4
+O jogador David pagou R$80 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 1
+Alice passou pela posição inicial e ganhou 200!
+Jogador rolou o dado e tirou: 6
+Bob passou pela posição inicial e ganhou 200!
+O jogador Bob pagou R$900 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 3
+Carta sorteada: Parabéns, você ganhou R$100!
+O jogador Carol teve sorte, e acabou de ganhar R$100!
+Jogador rolou o dado e tirou: 2
+O jogador David pagou R$74 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 2
+Jogador rolou o dado e tirou: 4
+O jogador Bob pagou R$60 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 6
+Carol comprou uma casa no terreno Jardins por R$55
+Jogador rolou o dado e tirou: 2
+O jogador David pagou R$100 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 3
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Alice teve azar, e acabou de perder R$300!
+Jogador rolou o dado e tirou: 4
+Bob comprou uma casa no terreno Av. Brasil por R$35
+Jogador rolou o dado e tirou: 5
+O jogador Carol pagou R$75 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 5
+David passou pela posição inicial e ganhou 200!
+David comprou uma casa no terreno Faria Lima por R$40
+Jogador rolou o dado e tirou: 2
+O jogador Alice pagou R$120 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 5
+Jogador rolou o dado e tirou: 1
+Carol comprou uma casa no terreno Parque Fortaleza por R$25
+Jogador rolou o dado e tirou: 1
+Carta sorteada: Ops, você perdeu R$100!
+O jogador David teve azar, e acabou de perder R$200!
+Jogador rolou o dado e tirou: 3
+O jogador Alice pagou R$121 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 4
+O jogador Bob pagou R$200 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 5
+Carol passou pela posição inicial e ganhou 200!
+O jogador Carol pagou R$750 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 4
+Carta sorteada: Ops, você perdeu R$100!
+O jogador David teve azar, e acabou de perder R$300!
+Jogador rolou o dado e tirou: 5
+O jogador Alice pagou R$80 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 3
+Bob passou pela posição inicial e ganhou 200!
+O jogador Bob pagou R$450 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 1
+O jogador Carol pagou R$60 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 6
+O jogador David pagou R$80 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 4
+Jogador rolou o dado e tirou: 1
+O jogador Bob pagou R$60 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 4
+Jogador rolou o dado e tirou: 1
+O jogador David pagou R$75 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 2
+Alice passou pela posição inicial e ganhou 200!
+O jogador Alice pagou R$40 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 4
+O jogador Bob pagou R$240 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 1
+O jogador Carol pagou R$30 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 3
+O jogador David pagou R$150 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 5
+O jogador Alice pagou R$60 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 5
+O jogador Bob pagou R$133 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 4
+Carol comprou uma casa no terreno Morumbi por R$38
+Jogador rolou o dado e tirou: 2
+David passou pela posição inicial e ganhou 200!
+O jogador David pagou R$40 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 1
+O jogador Alice pagou R$60 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 1
+Jogador rolou o dado e tirou: 4
+O jogador Carol pagou R$75 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 4
+Carta sorteada: Ops, você perdeu R$100!
+O jogador David teve azar, e acabou de perder R$200!
+Jogador rolou o dado e tirou: 1
+Jogador rolou o dado e tirou: 5
+O jogador Bob pagou R$70 de aluguel ao jogador David
+Jogador rolou o dado e tirou: 3
+O jogador Carol pagou R$150 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 5
+O jogador David pagou R$121 de aluguel ao jogador Bob
+Jogador rolou o dado e tirou: 4
+O jogador Alice pagou R$152 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 1
+O jogador Bob pagou R$50 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 1
+Carol passou pela posição inicial e ganhou 200!
+Jogador rolou o dado e tirou: 4
+Carta sorteada: Ops, você perdeu R$100!
+O jogador David teve azar, e acabou de perder R$100!
+Jogador rolou o dado e tirou: 2
+Carta sorteada: Parabéns, você ganhou R$200!
+O jogador Alice teve sorte, e acabou de ganhar R$200!
+Jogador rolou o dado e tirou: 5
+Bob passou pela posição inicial e ganhou 200!
+O jogador Bob pagou R$120 de aluguel ao jogador David
+Jogador rolou o dado e tirou: 5
+Carta sorteada: Parabéns, você ganhou R$200!
+O jogador Carol teve sorte, e acabou de ganhar R$200!
+Jogador rolou o dado e tirou: 3
+O jogador David pagou R$86 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 3
+O jogador Alice pagou R$86 de aluguel ao jogador Carol
+Jogador rolou o dado e tirou: 1
+Carta sorteada: Ops, você perdeu R$100!
+O jogador Bob teve azar, e acabou de perder R$300!
+Jogador rolou o dado e tirou: 3
+O jogador Carol pagou R$30 de aluguel ao jogador Alice
+Jogador rolou o dado e tirou: 1

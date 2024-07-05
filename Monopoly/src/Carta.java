@@ -5,13 +5,13 @@
 public class Carta {
     private int id;             //Identificador único para cada carta
     private String descricao;   //Nome da carta
-    private Jogador dono;       //Instância da classe jogador que possui tal carta 
+    private TipoCarta tipo;     //Enumeração que indica qual é o tipo da carta
 
     //Construtor
-    public Carta(int id, String descricao, Jogador dono){
+    public Carta(int id, String descricao, TipoCarta tipo){
         this.id = id;
         this.descricao = descricao;
-        this.dono = dono;
+        this.tipo = tipo;
     }
 
     //Getters e setters
@@ -27,12 +27,8 @@ public class Carta {
         this.descricao = descricao;
     }
 
-    public Jogador getDono() {
-        return dono;
-    }
-
-    public void setDono(Jogador dono) {
-        this.dono = dono;
+    public TipoCarta getTipo() {
+        return tipo;
     }
 
 
@@ -44,12 +40,6 @@ public class Carta {
         String out = "";
         out += "ID: " + id + "\n";
         out += "Descrição: " + descricao + "\n";
-
-        if (dono == null)
-            out += "Essa carta não pertence a nenhum jogador\n";
-
-        else
-            out += "Dono: " + dono.getNome() + " (" + dono.getId() + ")\n";
 
         return out;
     }

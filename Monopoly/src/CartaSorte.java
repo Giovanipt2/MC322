@@ -12,8 +12,8 @@ public class CartaSorte extends Carta{
     private String restricao;   //Para cartas que possuem restrições de uso
 
     //Construtor
-    public CartaSorte(int id, String descricao, Jogador dono, String movimento, String efeito, int valor, String acao, int tempo, String restricao) {
-        super(id, descricao, dono);
+    public CartaSorte(int id, String descricao, TipoCarta tipo, String movimento, String efeito, int valor, String acao, int tempo, String restricao) {
+        super(id, descricao, tipo);
         this.movimento = movimento;
         this.efeito = efeito;
         this.valor = valor;
@@ -72,6 +72,15 @@ public class CartaSorte extends Carta{
     }
 
 
+    /**
+     * Método que alterará o saldo do jogador com base no valor da carta
+     * @param jogador Instância da classe jogador que "caiu" nessa carta
+     */
+    public void executaAcao (Jogador jogador) {
+        jogador.setDinheiro(jogador.getDinheiro() + valor);
+    }
+
+    
     /**
      * Método que define como as informações de uma carta de sorte/revés serão exibidas
      */

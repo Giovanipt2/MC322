@@ -10,8 +10,8 @@ public class Terreno extends Propriedade {
     private boolean temHotel;       //Booleano que indica se hpa um hotel no terreno ou não
 
     //Construtor
-    public Terreno(int id, String descricao, Jogador dono, String nome, int preco, Jogador proprietario, double aluguel, int valorCasa, int valorHotel) {
-        super(id, descricao, dono, nome, preco, proprietario, aluguel);
+    public Terreno(int id, String descricao, TipoCarta tipo, String nome, int preco, int aluguel, int valorCasa, int valorHotel) {
+        super(id, descricao, tipo, nome, preco, aluguel);
         this.numCasas = 0;      //O número de casas nos terrenos começa sendo 0
         this.valorCasa = valorCasa;
         this.valorHotel = valorHotel;
@@ -48,7 +48,7 @@ public class Terreno extends Propriedade {
      * @return O valor do aluguel base do terreno
      */
     @Override
-    public double calcularAluguel() {
+    public int calcularAluguel() {
         return (this.getAluguel() + (valorCasa / 2) * numCasas) + (temHotel ? 400 : 0);
     }
 

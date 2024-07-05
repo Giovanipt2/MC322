@@ -6,14 +6,16 @@
 public class Propriedade extends Carta{
     private String nome;        //String que representa o nome da propriedade 
     private int preco;          //Valor de compra da propriedade
-    private double aluguel;         //Valor do aluguel base da propriedade
+    private int aluguel;         //Valor do aluguel base da propriedade
+    private Jogador dono;       //Instância da classe jogador que possui tal carta
 
     // Construtor
-    public Propriedade(int id, String descricao, Jogador dono, String nome, int preco, Jogador proprietario, double aluguel) {
-        super(id, descricao, dono);
+    public Propriedade(int id, String descricao, TipoCarta tipo, String nome, int preco, int aluguel) {
+        super(id, descricao, tipo);
         this.nome = nome;
         this.preco = preco;
         this.aluguel = aluguel;
+        this.dono = null;
     }
 
     // Getters e setters
@@ -33,21 +35,38 @@ public class Propriedade extends Carta{
         this.preco = preco;
     }
 
-    public double getAluguel() {
+    public int getAluguel() {
         return aluguel;
     }
 
-    public void setAluguel(double aluguel) {
+    public void setAluguel(int aluguel) {
         this.aluguel = aluguel;
     }
 
+    public Jogador getDono() {
+        return dono;
+    }
 
+    public void setDono(Jogador dono) {
+        this.dono = dono;
+    }
+
+    
     /**
      * Retorna o valor do aluguel base da propriedade em questão
      * @return O valor do aluguel base da propriedade
      */
-    public double calcularAluguel() {
-        return aluguel;
+    public int calcularAluguel() {
+        return this.aluguel;
+    }
+
+
+    /**
+     * Método para verificar se determinada propriedade possui um dono
+     * @return Verdadeiro, se já possui proprietário; ou false, caso contrário
+     */
+    public boolean temDono() {
+        return (dono != null) ? true : false;
     }
 
     

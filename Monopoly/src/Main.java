@@ -1,8 +1,10 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
     /**
-     * Método que servirá como um menu que mostra as informações e realiza as ações pedidass
+     * Método que servirá como um menu que mostra as informações e realiza as ações pedidas
+     * Nessa versão final do projeto, pela forma como acontecerá o jogo, o menu não será mais chamado na main
      */
     public static void menu(Tabuleiro tabuleiro) {
         Scanner scanner = new Scanner(System.in);
@@ -116,7 +118,7 @@ public class Main {
                     System.out.println("Cor da peça do jogador:");
                     corPecaLida = scanner.nextLine();
 
-                    Jogador jogadorNovo = new Jogador(nomeLido, cpfLido, emailLido, fotoLida, new Peca(corPecaLida, 0));
+                    Jogador jogadorNovo = new Jogador(nomeLido, cpfLido, emailLido, fotoLida, new Peca(corPecaLida));
                     tabuleiro.adicionarJogador(jogadorNovo);
                     System.out.println("O jogador criado tem as seguintes características:");
                     System.out.println(jogadorNovo);
@@ -188,57 +190,342 @@ public class Main {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
 
-        //Parte de testes dos construtores e instanciação de alguns objetos das classes
-        Peca peca1 = new Peca("ciano", 3);
-        Jogador jogador1 = new Jogador("Giovani", "526413728", "p200246@dac.unicamp.br" , "Minha foto", peca1);
-        CartaSorte carta1 = new CartaSorte(1, "Avanço", jogador1, "Avançe 3 casas", "Positivo",
-         0, null, 0, "Essa carta só pode ser usada após alguma compra");
-        Propriedade propriedade1 = new Propriedade(1, "tutstuts", jogador1, "Propriedade 1", 400, jogador1, 50.0);
-        ServicoPublico servicoPublico1 = new ServicoPublico(2, "tutstuts", jogador1,"Serviço Público 1", 200, jogador1, 30.0);
-        Estacao estacao1 = new Estacao(0, "tutstuts", jogador1,"Estação 1", 300, jogador1, 40.0);
-        Terreno terreno1 = new Terreno(1, "tutstuts", jogador1,"Propriedade 1", 400, jogador1, 50.0, 100, 200);
         Tabuleiro tabuleiro = new Tabuleiro();
+        //Construção do tabuleiro para que seja possível jogar
+        tabuleiro.inicializarTabuleiro();
 
-        System.out.println(carta1);
-        System.out.println(propriedade1);
-        System.out.println(terreno1);
-        System.out.println(servicoPublico1);
-        System.out.println(estacao1);
-        System.out.println(tabuleiro);
-        System.out.println(peca1);
+        //Loop para simular o jogo
+        //Os jogadores que falirem serão retirados do jogo, por isso a condição no while
+        while(tabuleiro.getJogadores().size() > 1) {    
+            for (Jogador jogador : tabuleiro.getJogadores()){
+                int n_dado = tabuleiro.rolarDado();     //Número sorteado no dado
+                tabuleiro.moverJogador(jogador, n_dado);
+                //Carta que está na posição atingida pelo jogador
+                Carta cartaDaPosicao = tabuleiro.getPosicoes().get(jogador.getPeca().getPosicao());
 
-        //Testes das funcionalidades do tabuleiro
-        tabuleiro.adicionarJogador(jogador1);
-        tabuleiro.adicionarPropriedade(terreno1);
-        
-        //Parte de testes da compra e venda de casas e hotéis para o jogador
-        if (terreno1.comprarCasa())
-            System.out.println("O jogador " + terreno1.getDono().getNome() + " comprou uma casa no(a) " + terreno1.getNome());
-        
-        else
-            System.out.println("O jogador " + terreno1.getDono().getNome() + " não conseguiu comprar uma casa no(a) " + terreno1.getNome());
+                switch (cartaDaPosicao.getTipo()) {
+                    case INICIO:
+                        jogador.setDinheiro(jogador.getDinheiro() + tabuleiro.getBonus());
+                        System.out.println(jogador.getNome() + " passou pela posição inicial e ganhou " + tabuleiro.getBonus() + "!");
+                        try {
+                            tabuleiro.salvaLog(jogador.getNome() + " passou pela posição inicial e ganhou " + tabuleiro.getBonus() + "!");
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+                    
+                    case ESTACAO:
+                        Estacao estacao = (Estacao) cartaDaPosicao;
+                        if (estacao.getDono() == null) {
+                            String mensagem = jogador.getNome() + ", gostaria de comprar a estação " + estacao.getNome() + " por R$" + estacao.getPreco() + "?";
+                            System.out.println(mensagem);
+                            System.out.println("[1] Sim");
+                            System.out.println("[2] Não");
+    
+                            int escolha = scanner.nextInt();
+                            if (escolha == 1) {
+                                if (jogador.temDinheiro(estacao.getPreco())) {
+                                    try {
+                                        jogador.compra(estacao);
+                                        estacao.setDono(jogador);
+                                        jogador.setNEstacoes(jogador.getNEstacoes() + 1);
+                                        System.out.println(jogador.getNome() + " comprou a estação " + estacao.getNome() + " por R$" + estacao.getPreco());
+                                        tabuleiro.salvaLog(jogador.getNome() + " comprou a estação " + estacao.getNome() + " por R$" + estacao.getPreco());
+                                    } catch (DinheiroInsuficienteException e) {
+                                        System.out.println(e.getMessage());
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                } else {
+                                    System.out.println("Saldo insuficiente para comprar esta propriedade.");
+                                }
+                            }
+                        } else {
+                            Jogador dono = estacao.getDono();
+                            //Se o próprio jogador for o dono, nada acontece
+                            if (jogador != dono) {
+                                int valorASerPago = estacao.calcularAluguel();
 
-        if (terreno1.comprarHotel())
-            System.out.println("O jogador " + terreno1.getDono().getNome() + " comprou um hotel no(a) " + terreno1.getNome());
+                                if (jogador.temDinheiro(valorASerPago)) {
+                                    dono.setDinheiro(dono.getDinheiro() + valorASerPago);
+                                    jogador.debitarSaldo(valorASerPago);
+                                    String mensagem = "O jogador " + jogador.getNome() + " pagou R$" + valorASerPago + " de aluguel ao jogador "
+                                        + dono.getNome();
+                                    System.out.println(mensagem);
+                                    try {
+                                        tabuleiro.salvaLog(mensagem);
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                    if (jogador.faliu()){
+                                        System.out.println("O jogador " + jogador.getNome() + " faliu e está fora do jogo!");
+                                        try {
+                                            tabuleiro.salvaLog("O jogador " + jogador.getNome() + " faliu e está fora do jogo!");
+                                        } catch (IOException e) {
+                                            e.printStackTrace();
+                                        }
+                                        tabuleiro.removerJogador(jogador);
+                                    }
+                                }
+                                else{
+                                    System.out.println("O jogador " + jogador.getNome() + " não tem dinheiro para pagar; portanto, está fora do jogo!");
+                                    try {
+                                        tabuleiro.salvaLog("O jogador " + jogador.getNome() + " não tem dinheiro para pagar; portanto, está fora do jogo!");
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                    tabuleiro.removerJogador(jogador);
+                                }
+                            }
+                        }
+                        break;
+                    
+                    case SERVICOPUBLICO:
+                        ServicoPublico servicoPublico = (ServicoPublico) cartaDaPosicao;
+                        int multiplicador = n_dado;
+                        servicoPublico.setMultiplicador(multiplicador);
+                        if (servicoPublico.getDono() == null) {
+                            String mensagem = jogador.getNome() + ", gostaria de comprar o serviço público " + servicoPublico.getNome() + " por R$"
+                             + servicoPublico.getPreco() + "?";
+                            System.out.println(mensagem);
+                            System.out.println("[1] Sim");
+                            System.out.println("[2] Não");
 
-        else
-            System.out.println("O jogador " + terreno1.getDono().getNome() + " naõ conseguiu comprar um hotel no(a) " + terreno1.getNome());
-        
-        //Testes das novas funcionalidades que relacionam as cartas aos jogadores
-        jogador1.adicionaCarta(carta1);
-        System.out.println(jogador1);
+                            int escolha = scanner.nextInt();
+                            if (escolha == 1) {
+                                if (jogador.temDinheiro(servicoPublico.getPreco())) {
+                                    try {
+                                        jogador.compra(servicoPublico);
+                                        servicoPublico.setDono(jogador);
+                                        System.out.println(jogador.getNome() + " comprou o serviço público " + servicoPublico.getNome() + " por R$"
+                                        + servicoPublico.getPreco());
+                                        tabuleiro.salvaLog(jogador.getNome() + " comprou o serviço público " + servicoPublico.getNome() + " por R$"
+                                         + servicoPublico.getPreco());
+                                    } catch (DinheiroInsuficienteException e) {
+                                        System.out.println(e.getMessage());
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                } else {
+                                    System.out.println("Saldo insuficiente para comprar esta propriedade.");
+                                }
+                            }
+                        } else {
+                            Jogador dono = servicoPublico.getDono();
+                            //Se o próprio jogador for o dono, nada acontece
+                            if (jogador != dono) {
+                                int valorASerPago = servicoPublico.calcularAluguel();
 
-        jogador1.removeCarta(carta1);
-        System.out.println(jogador1);
+                                if (jogador.temDinheiro(valorASerPago)) {
+                                    dono.setDinheiro(dono.getDinheiro() + valorASerPago);
+                                    jogador.debitarSaldo(valorASerPago);
+                                    String mensagem = "O jogador " + jogador.getNome() + " pagou R$" + valorASerPago + " de aluguel ao jogador "
+                                        + dono.getNome();
+                                    System.out.println(mensagem);
+                                    try {
+                                        tabuleiro.salvaLog(mensagem);
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                    if (jogador.faliu()){
+                                        System.out.println("O jogador " + jogador.getNome() + " faliu e está fora do jogo!");
+                                        try {
+                                            tabuleiro.salvaLog("O jogador " + jogador.getNome() + " faliu e está fora do jogo!");
+                                        } catch (IOException e) {
+                                            e.printStackTrace();
+                                        }
+                                        tabuleiro.removerJogador(jogador);
+                                    }
+                                }
+                                else{
+                                    System.out.println("O jogador " + jogador.getNome() + " não tem dinheiro para pagar; portanto, está fora do jogo!");
+                                    try {
+                                        tabuleiro.salvaLog("O jogador " + jogador.getNome() + " não tem dinheiro para pagar; portanto, está fora do jogo!");
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                    tabuleiro.removerJogador(jogador);
+                                }
+                            }
+                        }
+                        servicoPublico.setMultiplicador(1);
 
-        //Testes relacionados ao uso do menu
-        System.out.println("Gostaria de visualizar o menu? Digite 1 em caso afirmativo, ou 0, caso não queira");
-        String resposta = scanner.nextLine();
+                        break;
 
-        if (resposta.equals("1"))
-            menu(tabuleiro);
+                    case TERRENO:
+                        Terreno terreno = (Terreno) cartaDaPosicao;
+                        if (terreno.getDono() == null) {
+                            String mensagem = jogador.getNome() + ", gostaria de comprar o terreno " + terreno.getNome() + " por R$" + terreno.getPreco() + "?";
+                            System.out.println(mensagem);
+                            System.out.println("[1] Sim");
+                            System.out.println("[2] Não");
+
+                            int escolha = scanner.nextInt();
+                            if (escolha == 1) {
+                                if (jogador.temDinheiro(terreno.getPreco())) {
+                                    try {
+                                        jogador.compra(terreno);
+                                        terreno.setDono(jogador);
+                                        System.out.println(jogador.getNome() + " comprou o terreno " + terreno.getNome() + " por R$" + terreno.getPreco());
+                                        tabuleiro.salvaLog(jogador.getNome() + " comprou o terreno " + terreno.getNome() + " por R$" + terreno.getPreco());
+                                    } catch (DinheiroInsuficienteException e) {
+                                        System.out.println(e.getMessage());
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                } else {
+                                    System.out.println("Saldo insuficiente para comprar esta propriedade.");
+                                }
+                            }
+                        } else {
+                            Jogador dono = terreno.getDono();
+                            //Se o próprio jogador for o dono, nada acontece
+                            if (jogador != dono) {
+                                int valorASerPago = terreno.calcularAluguel();
+
+                                if (jogador.temDinheiro(valorASerPago)) {
+                                    dono.setDinheiro(dono.getDinheiro() + valorASerPago);
+                                    jogador.debitarSaldo(valorASerPago);
+                                    String mensagem = "O jogador " + jogador.getNome() + " pagou R$" + valorASerPago + " de aluguel ao jogador "
+                                        + dono.getNome();
+                                    System.out.println(mensagem);
+                                    try {
+                                        tabuleiro.salvaLog(mensagem);
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                    if (jogador.faliu()){
+                                        System.out.println("O jogador " + jogador.getNome() + " faliu e está fora do jogo!");
+                                        try {
+                                            tabuleiro.salvaLog("O jogador " + jogador.getNome() + " faliu e está fora do jogo!");
+                                        } catch (IOException e) {
+                                            e.printStackTrace();
+                                        }
+                                        tabuleiro.removerJogador(jogador);
+                                    }
+                                }
+                                else{
+                                    System.out.println("O jogador " + jogador.getNome() + " não tem dinheiro para pagar; portanto, está fora do jogo!");
+                                    try {
+                                        tabuleiro.salvaLog("O jogador " + jogador.getNome() + " não tem dinheiro para pagar; portanto, está fora do jogo!");
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+                                    tabuleiro.removerJogador(jogador);
+                                }
+                            }
+                            else {
+                                //Caso o jogador ainda não tenha o número máximo de casas em seu terreno
+                                if (terreno.getNumCasas() < 4) {
+                                    String mensagem = jogador.getNome() + ", gostaria de comprar uma casa no terreno" + terreno.getNome() + " por R$"
+                                        + terreno.getValorCasa() + "?";
+                                    System.out.println(mensagem);
+                                    System.out.println("[1] Sim");
+                                    System.out.println("[2] Não");
+
+                                    int escolha = scanner.nextInt();
+                                    if (escolha == 1) {
+                                        if (jogador.temDinheiro(terreno.getValorCasa())) {
+                                            try {
+                                                terreno.comprarCasa();
+                                                System.out.println(jogador.getNome() + " comprou uma casa no terreno " 
+                                                + terreno.getNome() + " por R$" + terreno.getValorCasa());
+                                                tabuleiro.salvaLog(jogador.getNome() + " comprou uma casa no terreno " 
+                                                    + terreno.getNome() + " por R$" + terreno.getValorCasa());
+                                            } catch (IOException e) {
+                                                e.printStackTrace();
+                                            }
+                                        } else {
+                                            System.out.println("Saldo insuficiente para comprar uma casa.");
+                                        }
+                                    }
+                                }
+                                else {
+                                    String mensagem = jogador.getNome() + ", gostaria de comprar um hotel no terreno" + terreno.getNome() + " por R$"
+                                        + terreno.getValorHotel() + "?";
+                                    System.out.println(mensagem);
+                                    System.out.println("[1] Sim");
+                                    System.out.println("[2] Não");
+
+                                    int escolha = scanner.nextInt();
+                                    if (escolha == 1) {
+                                        if (jogador.temDinheiro(terreno.getValorHotel())) {
+                                            try {
+                                                terreno.comprarHotel();
+                                                System.out.println(jogador.getNome() + " comprou um hotel no terreno " 
+                                                + terreno.getNome() + " por R$" + terreno.getValorHotel());
+                                                tabuleiro.salvaLog(jogador.getNome() + " comprou um hotel no terreno " 
+                                                    + terreno.getNome() + " por R$" + terreno.getValorHotel());
+                                            } catch (IOException e) {
+                                                e.printStackTrace();
+                                            }
+                                        } else {
+                                            System.out.println("Saldo insuficiente para comprar um hotel.");
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        break;
+
+                    case SORTE:
+                        //A posição apenas indicava que uma carta sorte deveria ser sorteada, mas não continha a carta
+                        CartaSorte cartaSorte = tabuleiro.sortearCartaSorte();
+
+                        if (cartaSorte.getTipo() == TipoCarta.SORTE){
+                            String mensagem = "O jogador " + jogador.getNome() + " teve sorte, e acabou de ganhar R$" +
+                                cartaSorte.getValor() + "!";
+                            System.out.println(mensagem);
+                            try {
+                                tabuleiro.salvaLog(mensagem);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            cartaSorte.executaAcao(jogador);
+                        }
+                        else{
+                            String mensagem = "O jogador " + jogador.getNome() + " teve azar, e acabou de perder R$" +
+                                Math.abs(cartaSorte.getValor()) + "!";
+                            System.out.println(mensagem);
+                            try {
+                                tabuleiro.salvaLog(mensagem);
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            cartaSorte.executaAcao(jogador);
+                            if (jogador.faliu()){
+                                System.out.println("O jogador " + jogador.getNome() + " faliu e está fora do jogo!");
+                                try {
+                                    tabuleiro.salvaLog("O jogador " + jogador.getNome() + " faliu e está fora do jogo!");
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
+                                tabuleiro.removerJogador(jogador);
+                            }
+                        }
+
+                        break;
+
+                    case REVES:
+                        //Esse caso específico não ocorrerá, já que as posições no tabuleiro só indicam que 
+                        //Uma carta de sorte deve ser sorteada, mas ainda não se sabe se ela é de sorte ou revés
+                        //No entanto, a estrutra do switch pede que haja um case para cada uma das opções possíveis
+                        //Inclusive, note que o caso de uma carta de revés é tratado na situação acima
+                        break;
+                }
+            }
+        }
 
         scanner.close();        //Fecha o objeto Scanner para liberar os recursos
-
+        //Impressão do vencedor (último jogador restante no tabuleiro)
+        Jogador vencedor = tabuleiro.getJogadores().get(0);
+        String mensagem = "O jogador vencedor é o " + vencedor.getNome() + "!";
+        System.out.println(mensagem);
+        try {
+            tabuleiro.salvaLog(mensagem);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -1,5 +1,5 @@
 /**
- * Classe respons ́avel por armazenar as informa ̧c ̃oes das pe ̧cas do jogo
+ * Classe responsável por armazenar as informações das peças do jogo
  * Seus atributos serão cor e posição
  */
 public class Peca {
@@ -7,9 +7,9 @@ public class Peca {
     private int posicao;    //Posição da peça no tabuleiro
 
     //Construtor
-    public Peca(String cor, int posicao) {
+    public Peca(String cor) {
         this.cor = cor;
-        this.posicao = posicao;
+        this.posicao = 0; // Por padrão, a posição inicial é 0 (início)
     }
 
     //Getters e setters
@@ -32,13 +32,8 @@ public class Peca {
     /**
      * Método que define como as informações da peça serão exibidas
      */
-    @Override       //Indicador de que este método sobrescreve o método "toString" que já existe na superclasse
+    @Override
     public String toString() {
-        String out = "";
-        out += "A peça é da cor " + cor + " e está na posção " + posicao + "\n";
- 
-        return out;
+        return "A peça é da cor " + cor + " e está na posição " + posicao + "\n";
     }
-
-    
 }

@@ -15,6 +15,7 @@ public class Jogador {
     private static int numJogadores = 0;    //Número de jogadores inicializados
     private ArrayList<Carta> cartas;    //Array que armazenará as cartas do jogador
     private Peca peca;          //Peça que representa o jogador no tabuleiro
+    private int nEstacoes;     //Número de estações que esse jogador possui
 
     //Construtor
     public Jogador(String nome, String cpf, String email, String foto, Peca peca) {
@@ -26,6 +27,7 @@ public class Jogador {
         this.id = numJogadores++;           //ID atribuído com base no número de jogadores inicializados
         this.peca = peca;
         this.cartas = new ArrayList<Carta>();
+        this.nEstacoes = 0;
     }
 
     //Getters e setters
@@ -81,6 +83,14 @@ public class Jogador {
         return cartas;
     }
 
+    public int getNEstacoes() {
+        return nEstacoes;
+    }
+
+    public void setNEstacoes(int nEstacoes) {
+        this.nEstacoes = nEstacoes;
+    }
+
     
     /**
      * Método que define como as informações do jogador serão exibidas
@@ -119,6 +129,16 @@ public class Jogador {
 
 
     /**
+     * Método para retirar do dinheiro do jogador o valor gasto
+     * @param preco Valor gasto pelo jogador em determinada situação
+     * @return
+     */
+    public void debitarSaldo(int preco) {
+        this.dinheiro -= preco;
+    }   
+
+
+    /**
      * Método utilizado para adicionar à mão do jogador uma carta
      * @param carta Carta que será adicionada ao jogador
      * @return True, se é possível adicionar a carta; ou false, caso contrário
@@ -135,5 +155,29 @@ public class Jogador {
      */
     public boolean removeCarta(Carta carta) {
         return cartas.remove(carta);
+    }
+
+
+     /**
+     * Método utilizado pelo jogador para comprar uma propriedade
+     * @param propriedade Objeto da classe Propriedade que representa uma instância dela
+     * @throws DinheiroInsuficienteException Se o saldo do jogador for insuficiente para comprar a propriedade
+     */
+    public void compra(Propriedade propriedade) throws DinheiroInsuficienteException {
+        int preco = propriedade.getPreco();
+        if (!temDinheiro(preco)) {
+            throw new DinheiroInsuficienteException("Saldo insuficiente para comprar a propriedade: " + propriedade.getNome());
+        }
+        debitarSaldo(preco);
+        adicionaCarta(propriedade);
+    }
+
+
+    /**
+     * Método para ver se o jogador faliu (condição de derrota)
+     * @return True, se o jogador está sem dinheiro; ou false, caso contrário
+     */
+    public boolean faliu() {
+        return (dinheiro == 0) ? true : false;
     }
 }
